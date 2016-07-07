@@ -1,16 +1,14 @@
-// CalculadorDePerimetros.cpp : Calcula perimetros de un rect·ngulo y un tri·ngulo, y la circunferencia de un cÌrculo.
+// CalculadorDePerimetros.cpp : Calcula perimetros de un rect√°ngulo y un tri√°ngulo, y la circunferencia de un c√≠rculo.
 //
 
 #include "stdafx.h"
 #include <iostream>
-#include <Windows.h>
 #include <math.h>
 
-const double PI = 3.141592653589793; //PI no est· definido en la librerÌa de math.h
+const double PI = 3.141592653589793; //PI no est√° definido en la librer√≠a de math.h
 struct Punto { double x, y; };
 struct Circulo { Punto centro; double radio; };
 struct Triangulo { Punto a, b, c; };
-//struct Rectangulo { Punto origen; double b, h; };
 struct Rectangulo { double b, h; };
 
 double ReadDouble(){
@@ -57,7 +55,7 @@ Rectangulo ReadRectangulo(){
 }
 
 double GetCircunferencia(Circulo circulo){
-	std::cout << "La circunferencia del cÌrculo con centro (" << circulo.centro.x <<
+	std::cout << "La circunferencia del c√≠rculo con centro (" << circulo.centro.x <<
 		"," << circulo.centro.y << ") y radio " << circulo.radio << " es ";
 	return (PI * 2 * circulo.radio);
 }
@@ -75,8 +73,6 @@ double GetPerimTriang(Triangulo triangulo){
 }
 
 double GetPerimRectang(Rectangulo rectangulo){
-	/*std::cout << "El perimetro del rectangulo con punto de origen (" << rectangulo.origen.x << "," << rectangulo.origen.y <<
-		"), con base " << rectangulo.b << " y altura " << rectangulo.h << " es ";*/
 	std::cout << "El perimetro del rectangulo con base " << rectangulo.b << " y altura " << rectangulo.h << " es ";
 	return (2 * (rectangulo.b + rectangulo.h));
 }
@@ -86,7 +82,6 @@ int main()
 	std::cout << GetCircunferencia(ReadCirculo()) << ".\n";
 	std::cout << GetPerimTriang(ReadTriangulo()) << ".\n";
 	std::cout << GetPerimRectang(ReadRectangulo()) << ".\n";
-	Sleep(5000);
 	return 0;
 }
 
